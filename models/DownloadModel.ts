@@ -28,19 +28,19 @@ interface MobxDownloadModel {
 }
 
 export default class DownloadModel {
-	isComplete = false
-	isDownloading = false
-	isNew = true
+	isComplete = false;
+	isDownloading = false;
+	isNew = true;
 
-	apiKey: string
-	readonly item: Readonly<DownloadItem>
+	apiKey: string;
+	readonly item: Readonly<DownloadItem>;
 	/** The "play" session ID for reporting a download has stopped. */
-	sessionId = uuidv4()
-	serverUrl: string
+	sessionId = uuidv4();
+	serverUrl: string;
 
-	filename: string
+	filename: string;
 
-	downloadUrl: string
+	downloadUrl: string;
 
 	constructor(
 		item: DownloadItem,

@@ -13,13 +13,13 @@ import ThemeSwitcher from '../ThemeSwitcher';
 // NOTE: This test just verifies the component renders, because the
 // functionality would be very difficult to test properly
 describe('ThemeSwitcher', () => {
-    it('renders as null without crashing', () => {
-        const { toJSON, unmount } = render(
-            <ThemeProvider>
-                <ThemeSwitcher />
-            </ThemeProvider>
-        );
-        expect(toJSON()).toBeNull();
-        act(unmount);
-    });
+	it('renders as null without crashing', () => {
+		const { toJSON, unmount } = render(
+			<ThemeProvider>
+				<ThemeSwitcher />
+			</ThemeProvider>
+		);
+		expect(toJSON()).toBeNull();
+		act(unmount);
+	});
 });

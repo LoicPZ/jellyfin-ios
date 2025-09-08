@@ -17,7 +17,7 @@ class Loader {
 		NativeVideoPlayer: '',
 		NativeShell: '',
 		ExpoRouterShim: ''
-	}
+	};
 
 	async load() {
 		// Load NativeShell plugins

@@ -10,6 +10,7 @@ import React from 'react';
 import { ThemeProvider } from 'react-native-elements';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+/* eslint-disable react/display-name, no-shadow */
 import '../../i18n';
 import { useStores } from '../../hooks/useStores';
 import HomeScreen from '../HomeScreen';
@@ -23,9 +24,9 @@ jest.mock('@react-navigation/native', () => {
 });
 
 jest.mock('../../components/NativeShellWebView', () => {
-    const React = require('react');
-    const { View } = require('react-native');
-    return () => React.createElement(View, { testID: 'native-shell-webview' });
+	const React = require('react');
+	const { View } = require('react-native');
+	return () => React.createElement(View, { testID: 'native-shell-webview' });
 });
 
 jest.mock('../../hooks/useStores');
@@ -47,7 +48,7 @@ useStores.mockImplementation(() => ({
 
 describe('HomeScreen', () => {
 	it('should render correctly', () => {
-    const { getByTestId } = render(
+		const { getByTestId } = render(
 			<SafeAreaProvider>
 				<ThemeProvider>
 					<NavigationContainer>
@@ -57,7 +58,7 @@ describe('HomeScreen', () => {
 			</SafeAreaProvider>
 		);
 
-    expect(getByTestId('native-shell-webview')).toBeTruthy();
+		expect(getByTestId('native-shell-webview')).toBeTruthy();
 	});
 
 	it('should render null when no servers are present', () => {
@@ -69,7 +70,7 @@ describe('HomeScreen', () => {
 			serverStore: {}
 		}));
 
-    const { toJSON } = render(
+		const { toJSON } = render(
 			<SafeAreaProvider>
 				<ThemeProvider>
 					<NavigationContainer>
@@ -79,7 +80,7 @@ describe('HomeScreen', () => {
 			</SafeAreaProvider>
 		);
 
-    expect(toJSON()).toBeNull();
+		expect(toJSON()).toBeNull();
 	});
 
 	it('should render ErrorView when invalid server exists', () => {
@@ -94,7 +95,7 @@ describe('HomeScreen', () => {
 			}
 		}));
 
-    const { getByTestId } = render(
+		const { getByTestId } = render(
 			<SafeAreaProvider>
 				<ThemeProvider>
 					<NavigationContainer>
@@ -104,6 +105,7 @@ describe('HomeScreen', () => {
 			</SafeAreaProvider>
 		);
 
-    expect(getByTestId('error-view-icon')).toBeTruthy();
+		expect(getByTestId('error-view-icon')).toBeTruthy();
 	});
 });
+/* eslint-enable react/display-name, no-shadow */

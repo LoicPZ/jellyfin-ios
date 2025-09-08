@@ -11,9 +11,9 @@ import { ActivityIndicator } from 'react-native';
 import LoadingScreen from '../LoadingScreen';
 
 describe('LoadingScreen', () => {
-    it('should render activity indicator', () => {
-        const { toJSON, UNSAFE_getByType } = render(<LoadingScreen />);
-        expect(toJSON()).toBeTruthy();
-        expect(() => UNSAFE_getByType(ActivityIndicator)).not.toThrow();
-    });
+	it('should render activity indicator', () => {
+		const { toJSON, UNSAFE_getByType } = render(<LoadingScreen />);
+		expect(toJSON()).toBeTruthy();
+		expect(() => UNSAFE_getByType(ActivityIndicator)).not.toThrow();
+	});
 });

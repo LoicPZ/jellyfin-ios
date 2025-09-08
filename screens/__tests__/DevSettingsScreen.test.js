@@ -10,10 +10,10 @@ import React from 'react';
 import DevSettingsScreen from '../DevSettingsScreen';
 
 describe('DevSettingsScreen', () => {
-    it('shows experimental toggles', () => {
-        const { getByText, unmount } = render(<DevSettingsScreen />);
-        expect(getByText('Native Audio Player')).toBeTruthy();
-        expect(getByText('Transcoded Downloads')).toBeTruthy();
-        act(unmount);
-    });
+	it('shows experimental toggles', () => {
+		const { getByText, unmount } = render(<DevSettingsScreen />);
+		expect(getByText('Native Audio Player')).toBeTruthy();
+		expect(getByText('Transcoded Downloads')).toBeTruthy();
+		act(unmount);
+	});
 });

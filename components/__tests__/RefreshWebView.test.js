@@ -12,8 +12,8 @@ import RefreshWebView from '../RefreshWebView';
 // NOTE: This test just verifies the component renders, because the
 // functionality would be very difficult to test properly
 describe('RefreshWebView', () => {
-    it('should render a WebView container', () => {
-        const { getByTestId } = render(<RefreshWebView isRefreshing={false} />);
-        expect(getByTestId('mock-webview')).toBeTruthy();
-    });
+	it('should render a WebView container', () => {
+		const { getByTestId } = render(<RefreshWebView isRefreshing={false} />);
+		expect(getByTestId('mock-webview')).toBeTruthy();
+	});
 });

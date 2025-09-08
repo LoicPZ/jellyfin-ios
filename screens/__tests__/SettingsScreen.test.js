@@ -30,19 +30,19 @@ useStores.mockImplementation(() => ({
 }));
 
 describe('SettingsScreen', () => {
-    it('renders app name and version labels', () => {
-        Platform.Version = '13';
+	it('renders app name and version labels', () => {
+		Platform.Version = '13';
 
-        const { getByTestId, unmount } = render(
-            <ThemeProvider>
-                <NavigationContainer>
-                    <SettingsScreen />
-                </NavigationContainer>
-            </ThemeProvider>
-        );
+		const { getByTestId, unmount } = render(
+			<ThemeProvider>
+				<NavigationContainer>
+					<SettingsScreen />
+				</NavigationContainer>
+			</ThemeProvider>
+		);
 
-        expect(getByTestId('app-name')).toBeTruthy();
-        expect(getByTestId('app-version')).toBeTruthy();
-        act(unmount);
-    });
+		expect(getByTestId('app-name')).toBeTruthy();
+		expect(getByTestId('app-version')).toBeTruthy();
+		act(unmount);
+	});
 });

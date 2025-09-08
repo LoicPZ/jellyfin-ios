@@ -52,9 +52,9 @@ type State = {
 }
 
 type Actions = {
-	set: (v: Partial<State>) => void,
-	getTheme: () => any, // TODO: get typing on themes and put it here
-	reset: () => void
+    set: (v: Partial<State>) => void,
+    getTheme: () => unknown, // TODO: type Themes and use explicit type
+    reset: () => void
 }
 
 export type SettingStore = State & Actions

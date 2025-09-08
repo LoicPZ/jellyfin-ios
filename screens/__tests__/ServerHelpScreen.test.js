@@ -12,13 +12,13 @@ import '../../i18n';
 import ServerHelpScreen from '../ServerHelpScreen';
 
 describe('ServerHelpScreen', () => {
-    it('shows heading and CTA', () => {
-        const { getByText } = render(
-            <NavigationContainer>
-                <ServerHelpScreen />
-            </NavigationContainer>
-        );
-        expect(getByText('What is Jellyfin?')).toBeTruthy();
-        expect(getByText('Learn more about how to host your own server')).toBeTruthy();
-    });
+	it('shows heading and CTA', () => {
+		const { getByText } = render(
+			<NavigationContainer>
+				<ServerHelpScreen />
+			</NavigationContainer>
+		);
+		expect(getByText('What is Jellyfin?')).toBeTruthy();
+		expect(getByText('Learn more about how to host your own server')).toBeTruthy();
+	});
 });

@@ -1,3 +1,4 @@
+/* eslint-disable import/namespace */
 /**
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -141,3 +142,4 @@ i18next
 
 // Export i18next instance for use in tests
 export default i18next;
+/* eslint-enable import/namespace */

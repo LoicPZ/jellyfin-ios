@@ -12,13 +12,13 @@ import '../../i18n';
 import AddServerScreen from '../AddServerScreen';
 
 describe('AddServerScreen', () => {
-    it('shows server address placeholder', () => {
-        const { getByPlaceholderText, unmount } = render(
-            <NavigationContainer>
-                <AddServerScreen />
-            </NavigationContainer>
-        );
-        expect(getByPlaceholderText('https://jellyfin.org')).toBeTruthy();
-        act(unmount);
-    });
+	it('shows server address placeholder', () => {
+		const { getByPlaceholderText, unmount } = render(
+			<NavigationContainer>
+				<AddServerScreen />
+			</NavigationContainer>
+		);
+		expect(getByPlaceholderText('https://jellyfin.org')).toBeTruthy();
+		act(unmount);
+	});
 });
