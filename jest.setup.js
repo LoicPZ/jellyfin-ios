@@ -44,6 +44,10 @@ jest.mock('react-native-reanimated', () => {
 	return Reanimated;
 });
 
+// Mock native modules that are unavailable in Jest
+jest.mock('expo-av');
+jest.mock('react-native-webview');
+
 // RN >= 0.79 no longer needs NativeAnimatedHelper mock
 
 // Workaround for process failing: https://github.com/react-navigation/react-navigation/issues/9568
