@@ -9,13 +9,10 @@ import { getIconName } from '../Icons';
 
 describe('Icons', () => {
 	describe('getIconName()', () => {
-		it('should prefix icon names with "ios-" on iOS platforms', () => {
-			expect(getIconName('test')).toBe('ios-test');
-		});
-
-		it('should prefix icon names with "md-" on non-iOS platforms', () => {
+		it('should return the name as-is for current Ionicons versions', () => {
+			expect(getIconName('test')).toBe('test');
 			Platform.OS = 'android';
-			expect(getIconName('test')).toBe('md-test');
+			expect(getIconName('test')).toBe('test');
 		});
 
 		it('should return empty string if called without icon name', () => {
