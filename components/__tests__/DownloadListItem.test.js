@@ -10,6 +10,22 @@ import React from 'react';
 import DownloadModel from '../../models/DownloadModel';
 import DownloadListItem from '../DownloadListItem';
 
+// Mock RNE ListItem to avoid Animated internals in Jest 29/RN 0.79
+jest.mock('react-native-elements', () => {
+    const actual = jest.requireActual('react-native-elements');
+    const React = require('react');
+    const { View, Text } = require('react-native');
+    const ListItem = ({ children, onPress, testID }) => (
+        React.createElement(Text, { onPress, testID }, children)
+    );
+    ListItem.Content = ({ children }) => React.createElement(View, { testID: 'list-content' }, children);
+    ListItem.Title = ({ children, testID }) => React.createElement(Text, { testID }, children);
+    ListItem.Subtitle = ({ children, testID }) => React.createElement(Text, { testID }, children);
+    ListItem.CheckBox = ({ testID, onPress }) => React.createElement(Text, { testID, onPress });
+    const Button = ({ onPress, testID }) => React.createElement(Text, { onPress, testID });
+    return { ...actual, ListItem, Button };
+});
+
 describe('DownloadListItem', () => {
 	let model;
 

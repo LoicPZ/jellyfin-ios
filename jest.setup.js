@@ -7,6 +7,8 @@
  */
 
 // import '@testing-library/jest-dom'
+// Initialize i18n once for all tests
+import './i18n';
 
 /* AsyncStorage Mock */
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';

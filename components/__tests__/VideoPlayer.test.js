@@ -10,12 +10,9 @@ import React from 'react';
 import VideoPlayer from '../VideoPlayer';
 
 describe('VideoPlayer', () => {
-	it('should render correctly', () => {
-		const { toJSON, unmount } = render(
-			<VideoPlayer />
-		);
-
-		expect(toJSON()).toMatchSnapshot();
-		act(unmount);
-	});
+    it('renders video component', () => {
+        const { getByTestId, unmount } = render(<VideoPlayer />);
+        expect(getByTestId('mock-video')).toBeTruthy();
+        act(unmount);
+    });
 });

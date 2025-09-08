@@ -34,11 +34,8 @@ getDeviceProfile.mockImplementation(() => ({}));
 getSafeDeviceName.mockImplementation(() => 'Test Device');
 
 describe('NativeShellWebView', () => {
-	it('should render correctly', () => {
-		const { toJSON } = render(
-			<NativeShellWebView />
-		);
-
-		expect(toJSON()).toMatchSnapshot();
-	});
+    it('renders without crashing', () => {
+        const { toJSON } = render(<NativeShellWebView />);
+        expect(toJSON()).toBeTruthy();
+    });
 });

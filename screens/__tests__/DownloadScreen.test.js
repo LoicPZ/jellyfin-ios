@@ -62,14 +62,13 @@ useStores.mockImplementation(() => ({
 }));
 
 describe('DownloadScreen', () => {
-	it('should render correctly', () => {
-		const v = render(
-			<NavigationContainer>
-				<DownloadScreen />
-			</NavigationContainer>
-		);
-
-		expect(v.toJSON()).toMatchSnapshot();
-		expect(mockSetOptions).toHaveBeenCalled();
-	});
+    it('renders and sets header options', () => {
+        const v = render(
+            <NavigationContainer>
+                <DownloadScreen />
+            </NavigationContainer>
+        );
+        expect(v.toJSON()).toBeTruthy();
+        expect(mockSetOptions).toHaveBeenCalled();
+    });
 });

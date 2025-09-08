@@ -32,17 +32,16 @@ jest.mock('@react-navigation/native', () => ({
 }));
 
 describe('ErrorScreen', () => {
-	it('should render correctly', () => {
-		const { toJSON } = render(
-			<SafeAreaProvider>
-				<ThemeProvider>
-					<NavigationContainer>
-						<ErrorScreen />
-					</NavigationContainer>
-				</ThemeProvider>
-			</SafeAreaProvider>
-		);
-
-		expect(toJSON()).toMatchSnapshot();
-	});
+    it('renders ErrorView icon', () => {
+        const { getByTestId } = render(
+            <SafeAreaProvider>
+                <ThemeProvider>
+                    <NavigationContainer>
+                        <ErrorScreen />
+                    </NavigationContainer>
+                </ThemeProvider>
+            </SafeAreaProvider>
+        );
+        expect(getByTestId('error-view-icon')).toBeTruthy();
+    });
 });
