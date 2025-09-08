@@ -41,6 +41,11 @@
         ]
       }
     },
-    "description": "Jellyfin"
+    "description": "Jellyfin",
+    "plugins": [
+      "expo-localization",
+      "expo-font",
+      "expo-asset"
+    ]
   }
 }

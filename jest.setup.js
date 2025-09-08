@@ -29,6 +29,11 @@ enableFetchMocks();
 /* React Navigation Mocks */
 import 'react-native-gesture-handler/jestSetup';
 
+// Polyfills for JSDOM environment changes in newer Jest versions
+if (typeof global.setImmediate === 'undefined') {
+	global.setImmediate = (fn, ...args) => setTimeout(fn, 0, ...args);
+}
+
 jest.mock('react-native-reanimated', () => {
 	const Reanimated = require('react-native-reanimated/mock');
 
@@ -39,8 +44,7 @@ jest.mock('react-native-reanimated', () => {
 	return Reanimated;
 });
 
-// Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
-jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+// RN >= 0.79 no longer needs NativeAnimatedHelper mock
 
 // Workaround for process failing: https://github.com/react-navigation/react-navigation/issues/9568
 jest.mock('@react-navigation/native/lib/commonjs/useLinking.native', () => ({
